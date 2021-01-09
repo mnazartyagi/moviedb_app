@@ -1,0 +1,91 @@
+<div class="ui container">
+  <div class="ui grid">
+    <div
+      class="middle aligned sixteen wide mobile eight wide tablet eight wide computer column"
+    >
+      <div class="ui large breadcrumb">
+        <div class="active section">
+          <span class="ui teal header">
+            <span>Top-Rated Movies</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="right aligned middle aligned sixteen wide mobile eight wide tablet eight wide computer column"
+    ></div>
+  </div>
+
+  <div class="ui seven doubling cards">
+    <div class="card" *ngFor="let movie of movies | async">
+      <div class="image">
+        <img
+          class="ui middle aligned tiny image"
+          src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+        />
+      </div>
+      <div class="content">
+        <div class="header">
+          {{ movie.title }}
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+          <h3>
+            <i class="star icon"></i>
+            {{ movie.vote_average }}
+          </h3>
+        </span>
+        {{ movie.release_date }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui horizontal divider">/</div>
+
+<div class="ui container">
+  <div class="ui grid">
+    <div
+      class="middle aligned sixteen wide mobile eight wide tablet eight wide computer column"
+    >
+      <div class="ui large breadcrumb">
+        <div class="active section">
+          <span class="ui teal header">
+            <span>Upcoming Movies</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="right aligned middle aligned sixteen wide mobile eight wide tablet eight wide computer column"
+    ></div>
+  </div>
+
+  <div class="ui seven doubling cards">
+    <div class="card" *ngFor="let upmovie of upmovies | async">
+      <div class="image">
+        <img
+          class="ui middle aligned tiny image"
+          src="https://image.tmdb.org/t/p/w500{{ upmovie.poster_path }}"
+        />
+      </div>
+      <div class="content">
+        <div class="header">
+          {{ upmovie.title }}
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+          <h3>
+            <i class="star icon"></i>
+            {{ upmovie.vote_average }}
+          </h3>
+        </span>
+        {{ upmovie.release_date }}
+      </div>
+    </div>
+  </div>
+</div>
